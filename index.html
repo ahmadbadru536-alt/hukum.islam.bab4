@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sumber Hukum Islam – Media Interaktif PAI Kelas X</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f5ef;--card:#fff;--tx:#1d2b25;--mu:#5d6b64;--pr:#0f6b4f;--pl:#dff1ea;--ac:#b7791f;--bd:#e0dccf;--ok:#1b7a3d;--no:#b3261e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#13201b;--card:#1c2c26;--tx:#e9f0ec;--mu:#9fb0a8;--pr:#4cc9a0;--pl:#21392f;--ac:#e0b04f;--bd:#2f4339;--ok:#58d68d;--no:#ff8a80}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#13201b;--card:#1c2c26;--tx:#e9f0ec;--mu:#9fb0a8;--pr:#4cc9a0;--pl:#21392f;--ac:#e0b04f;--bd:#2f4339;--ok:#58d68d;--no:#ff8a80}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:22px 16px 10px;max-width:900px;margin:auto}
+h1{margin:0;font-size:1.5rem;color:var(--pr)}
+.sub{color:var(--mu);font-size:.9rem}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px 16px;max-width:900px;margin:auto;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:20px;font:inherit;font-size:.88rem;cursor:pointer}
+nav button.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+main{max-width:900px;margin:auto;padding:8px 16px 40px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:12px 0}
+h2{font-size:1.25rem;margin:.2em 0 .4em;color:var(--pr)}
+h3{font-size:1rem;margin:.2em 0 .3em;color:var(--ac)}
+.ar{font:1.35rem/2 "Scheherazade New","Traditional Arabic",serif;direction:rtl;text-align:right;background:var(--pl);padding:8px 12px;border-radius:10px;margin:8px 0}
+.tag{display:inline-block;background:var(--pl);color:var(--pr);border-radius:8px;padding:2px 9px;font-size:.78rem;margin:2px 4px 2px 0}
+details{border:1px solid var(--bd);border-radius:10px;padding:8px 12px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+ol,ul{padding-left:20px;margin:.4em 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.flip{cursor:pointer;background:var(--pl);border-radius:12px;padding:12px;min-height:110px}
+.flip b{color:var(--pr)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;font:inherit;cursor:pointer}
+.opt.ok{border-color:var(--ok);background:var(--pl)}.opt.no{border-color:var(--no)}
+.fb{margin-top:8px;font-size:.92rem;color:var(--mu)}
+.btn{background:var(--pr);color:#fff;border:0;border-radius:10px;padding:9px 16px;font:inherit;cursor:pointer;margin-top:8px}
+.bar{height:8px;background:var(--pl);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--pr);width:0;transition:width .3s}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{border:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--pl)}
+</style>
+</head>
+<body>
+<header>
+<h1>📖 Sumber Hukum Islam</h1>
+<div class="sub">PAI dan Budi Pekerti · Fase E (Kelas X SMA) · Elemen Fikih</div>
+</header>
+<nav id="nav"></nav>
+<main id="app"></main>
+<script>
+const S={
+quran:{t:"Al-Qur’an",ic:"📗",def:"Kalamullah (firman Allah) yang diwahyukan kepada Nabi Muhammad ﷺ melalui Malaikat Jibril, berbahasa Arab, disampaikan secara mutawatir, membacanya bernilai ibadah, dimulai dari surah Al-Fatihah dan diakhiri surah An-Nas.",
+pos:"Sumber hukum utama dan pertama; menjadi rujukan bagi semua sumber hukum lain.",
+isi:["Hukum akidah (keimanan)","Hukum akhlak","Hukum amaliah: ibadah (hubungan dengan Allah) dan muamalah (hubungan dengan manusia)","Kisah umat terdahulu, janji dan ancaman"],
+ar:"يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ",ref:"QS Al-Baqarah/2: 183",
+ex:["Dalil: QS Al-Baqarah/2: 183 memakai kata kutiba ‘alaikum (diwajibkan atas kamu).","Bentuk perintah (amr) tanpa ada petunjuk lain (qarinah) berarti menunjukkan hukum wajib.","Kesimpulan: puasa Ramadan hukumnya wajib bagi muslim yang memenuhi syarat."],
+ap:"Siswa menjalankan puasa Ramadan, serta melatih pengendalian diri (takwa) di sekolah, misalnya jujur saat ujian dan tidak menyontek."},
+hadis:{t:"Hadis / Sunah",ic:"📘",def:"Segala perkataan (qauliyah), perbuatan (fi’liyah), dan ketetapan (taqririyah) Nabi Muhammad ﷺ yang menjadi pedoman syariat. Hadis menjadi sumber hukum kedua setelah Al-Qur’an.",
+pos:"Sumber hukum kedua. Fungsinya: (1) menguatkan hukum Al-Qur’an (bayan taqrir), (2) menjelaskan yang global (bayan tafsir), dan (3) menetapkan hukum baru yang tidak disebut Al-Qur’an (bayan tasyri’).",
+isi:["Qauliyah: sabda Nabi","Fi’liyah: perbuatan Nabi, misalnya tata cara salat","Taqririyah: Nabi diam/membenarkan perbuatan sahabat","Ditinjau dari sanad: sahih, hasan, daif (hanya sahih dan hasan yang dapat jadi hujah)"],
+ar:"إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ",ref:"HR Bukhari dan Muslim (hadis niat)",
+ex:["Al-Qur’an memerintahkan salat secara global (QS Al-Baqarah/2: 43) tanpa merinci tata caranya.","Hadis menjelaskan: “Salatlah sebagaimana kalian melihat aku salat” (HR Bukhari).","Kesimpulan: gerakan dan bacaan salat mengikuti contoh Nabi ﷺ (bayan tafsir)."],
+ap:"Mengikuti tata cara wudu dan salat sesuai tuntunan Nabi, serta meneladani sikap beliau: senyum, jujur, dan menepati janji."},
+ijmak:{t:"Ijmak",ic:"🤝",def:"Kesepakatan seluruh mujtahid (ulama ahli ijtihad) dari umat Nabi Muhammad ﷺ pada suatu masa setelah wafat beliau terhadap suatu hukum syariat.",
+pos:"Sumber hukum ketiga. Dasarnya adalah Al-Qur’an, hadis, dan kesepakatan para sahabat.",
+isi:["Ijmak sarih: semua mujtahid menyatakan pendapat secara jelas","Ijmak sukuti: sebagian berpendapat, yang lain diam tanpa menentang","Syarat: dilakukan mujtahid, tidak bertentangan dengan Al-Qur’an dan hadis, dan dapat dibuktikan kesepakatannya"],
+ar:"",ref:"",
+ex:["Setelah banyak penghafal Al-Qur’an gugur di Perang Yamamah, Umar mengusulkan pengumpulan Al-Qur’an.","Abu Bakar menyetujui, Zaid bin Tsabit ditugaskan, dan para sahabat menyepakatinya.","Kesimpulan: pengumpulan dan pembukuan Al-Qur’an menjadi mushaf disepakati (ijmak sahabat)."],
+ap:"Contoh penerapan: kesepakatan ulama bahwa Al-Qur’an dibukukan dalam satu mushaf. Dalam musyawarah kelas atau OSIS, siswa belajar menghargai kesepakatan bersama."},
+kias:{t:"Kias (Qiyas)",ic:"⚖️",def:"Menetapkan hukum suatu peristiwa yang belum ada nasnya dengan menyamakannya pada peristiwa yang sudah ada nasnya karena adanya kesamaan sebab hukum (illat).",
+pos:"Sumber hukum keempat. Dalilnya antara lain QS Al-Hasyr/59: 2 (“maka ambillah pelajaran, wahai orang-orang yang berakal”) dan dialog Nabi dengan Muadz bin Jabal.",
+isi:["Asal (maqis ‘alaih): perkara yang ada nasnya","Cabang (maqis): perkara baru yang belum ada nasnya","Hukum asal: hukum yang ditetapkan nas","Illat: sebab yang menyamakan keduanya"],
+ar:"يَا أَيُّهَا الَّذِينَ آمَنُوا إِنَّمَا الْخَمْرُ وَالْمَيْسِرُ وَالْأَنصَابُ وَالْأَزْلَامُ رِجْسٌ مِّنْ عَمَلِ الشَّيْطَانِ فَاجْتَنِبُوهُ",ref:"QS Al-Ma’idah/5: 90",
+ex:["Asal: khamr (minuman keras), hukumnya haram berdasarkan QS Al-Ma’idah/5: 90.","Cabang: narkoba (sabu, ganja, dan sejenisnya) yang tidak disebut di Al-Qur’an.","Illat: memabukkan dan merusak akal, kesehatan, dan masa depan.","Kesimpulan: narkoba haram karena memiliki illat yang sama dengan khamr."],
+ap:"Menjauhi narkoba, vape berbahan terlarang, dan zat adiktif; ikut kampanye anti narkoba di sekolah."},
+ijtihad:{t:"Ijtihad & Dalil Lain",ic:"🧠",def:"Ijtihad adalah mencurahkan kesungguhan berpikir oleh ahli (mujtahid) untuk menetapkan hukum syariat dari dalil-dalilnya terhadap masalah yang belum jelas hukumnya.",
+pos:"Bukan sumber yang berdiri sendiri, melainkan metode menggali hukum (istinbat) dari Al-Qur’an, hadis, ijmak, dan kias. Dalam hadis Muadz, Nabi membenarkan ijtihad ketika hukum tidak ditemukan di Al-Qur’an dan sunah.",
+isi:["Istihsan: berpindah dari hukum umum ke hukum khusus karena ada kemaslahatan","Maslahah mursalah: menetapkan hukum demi kemaslahatan yang tidak ada nas khusus","‘Urf: adat kebiasaan baik yang tidak bertentangan dengan syariat","Istishab: menetapkan hukum lama sampai ada dalil yang mengubahnya","Sadd az-zari’ah: menutup jalan menuju keburukan","Syarat mujtahid: menguasai bahasa Arab, Al-Qur’an, hadis, ushul fikih, dan kondisi masyarakat"],
+ar:"",ref:"",
+ex:["Masalah: bolehkah salat di pesawat bila waktu salat tiba saat penerbangan?","Dasar: Al-Qur’an memerintahkan salat dan sesuai kemampuan (QS At-Taghabun/64: 16), serta kaidah agama itu memudahkan.","Ijtihad ulama: salat dilakukan di pesawat dengan menghadap kiblat sebisanya dan tetap menjaga rukun semampunya.","Contoh lain: zakat profesi, fatwa uang elektronik, dan fatwa kehalalan produk (MUI)."],
+ap:"Siswa belajar bertanya kepada ulama atau lembaga yang berwenang (MUI, Kemenag, ormas besar) dalam masalah baru, bukan membuat fatwa sendiri."}
+};
+const TK=[["Wajib (fardu)","Dikerjakan berpahala, ditinggalkan berdosa.","Salat 5 waktu, puasa Ramadan"],["Sunah (mandub)","Dikerjakan berpahala, ditinggalkan tidak berdosa.","Salat duha, puasa Senin–Kamis"],["Mubah","Boleh; tidak berpahala dan tidak berdosa.","Memilih jenis makanan halal"],["Makruh","Ditinggalkan berpahala, dikerjakan tidak berdosa.","Berlebihan saat makan dan minum"],["Haram","Ditinggalkan berpahala, dikerjakan berdosa.","Mencuri, korupsi, narkoba"]];
+const KK=[["Hifz ad-Din","Menjaga agama","Toleransi dan kebebasan beribadah"],["Hifz an-Nafs","Menjaga jiwa","Tertib lalu lintas, antiperundungan"],["Hifz al-‘Aql","Menjaga akal","Menjauhi narkoba dan miras, rajin belajar"],["Hifz an-Nasl","Menjaga keturunan dan kehormatan","Menjauhi pergaulan bebas dan kekerasan seksual"],["Hifz al-Mal","Menjaga harta","Tidak mencuri, tidak menyontek (hak karya), jujur dalam jual beli"]];
+const Q=[
+["Urutan sumber hukum Islam yang benar adalah ...",["Al-Qur’an, hadis, ijmak, kias","Hadis, Al-Qur’an, kias, ijmak","Ijmak, kias, Al-Qur’an, hadis","Al-Qur’an, ijmak, hadis, kias"],0,"Urutan: Al-Qur’an, hadis, ijmak, lalu kias (sesuai dialog Muadz bin Jabal)."],
+["Perintah salat bersifat global di Al-Qur’an, lalu dijelaskan tata caranya oleh hadis. Fungsi hadis tersebut adalah ...",["Bayan taqrir","Bayan tafsir","Bayan tasyri’","Bayan nasakh"],1,"Menjelaskan yang global disebut bayan tafsir."],
+["Kesepakatan para mujtahid pada suatu masa terhadap hukum syariat disebut ...",["Ijtihad","Kias","Ijmak","Istihsan"],2,"Ijmak adalah kesepakatan seluruh mujtahid pada suatu masa."],
+["Dalam kias narkoba = khamr, yang berfungsi sebagai illat adalah ...",["Dijual di pasar gelap","Memabukkan dan merusak akal","Berasal dari tumbuhan","Harganya mahal"],1,"Illat: sebab hukum yang sama, yaitu memabukkan dan merusak akal."],
+["Seorang siswa ingin menetapkan hukum vaksin tertentu. Langkah yang tepat adalah ...",["Menetapkan sendiri berdasarkan perasaan","Merujuk fatwa lembaga yang berwenang seperti MUI","Mengikuti pendapat yang paling populer di media sosial","Menunggu sampai semua orang sepakat"],1,"Masalah baru dijawab melalui ijtihad ulama/lembaga berwenang."],
+["Kasus: Siswa menyontek saat ujian. Prinsip al-kulliyat al-khamsah yang paling dilanggar adalah ...",["Hifz ad-Din","Hifz al-Mal (hak/karya orang lain) dan kejujuran","Hifz an-Nasl","Hifz an-Nafs"],1,"Menyontek mengambil hak hasil usaha orang lain dan melanggar kejujuran."],
+["Hukum yang dikerjakan berpahala dan ditinggalkan tidak berdosa disebut ...",["Wajib","Sunah","Mubah","Haram"],1,"Itulah sunah (mandub)."],
+["Syarat utama seseorang berijtihad adalah ...",["Populer di media sosial","Menguasai Al-Qur’an, hadis, bahasa Arab, dan ushul fikih","Berusia di atas 40 tahun","Berpendidikan formal tinggi saja"],1,"Mujtahid harus menguasai perangkat keilmuan syariat."]];
+const tabs=[["home","Beranda"],...Object.keys(S).map(k=>[k,S[k].ic+" "+S[k].t]),["taklif","Hukum Taklifi"],["kk","Lima Prinsip"],["kuis","Kuis"]];
+const nav=document.getElementById("nav"),app=document.getElementById("app");
+function go(k){[...nav.children].forEach(b=>b.classList.toggle("on",b.dataset.k==k));app.innerHTML=R[k]?R[k]():src(k);try{location.hash=k}catch(e){}scrollTo(0,0)}
+tabs.forEach(([k,l])=>{const b=document.createElement("button");b.textContent=l;b.dataset.k=k;b.onclick=()=>go(k);nav.appendChild(b)});
+const R={
+home:()=>`<div class="card"><h2>Capaian Pembelajaran (Fase E, Elemen Fikih)</h2><p>Peserta didik memahami sumber hukum Islam dan pentingnya menjaga lima prinsip dasar hukum Islam (<i>al-kulliyāt al-khamsah</i>).</p><h3>Tujuan Pembelajaran</h3><ol><li>Menjelaskan pengertian dan kedudukan Al-Qur’an, hadis, ijmak, kias, dan ijtihad.</li><li>Menganalisis contoh pengambilan hukum dari tiap sumber.</li><li>Menerapkan sumber hukum Islam dalam kehidupan sehari-hari.</li><li>Menunjukkan sikap menghargai perbedaan hasil ijtihad dan menjaga lima prinsip dasar syariat.</li></ol></div>
+<div class="card"><h2>Peta Konsep</h2><p>Tekan setiap kartu untuk membuka materi:</p><div class="grid">${Object.keys(S).map(k=>`<div class="flip" onclick="go('${k}')"><b>${S[k].ic} ${S[k].t}</b><br><span class="sub">${S[k].pos.slice(0,70)}…</span></div>`).join("")}</div></div>
+<div class="card"><h3>Dialog Muadz bin Jabal</h3><p>Nabi ﷺ bertanya kepada Muadz, “Dengan apa engkau memutuskan perkara?” Muadz menjawab: dengan Kitabullah, lalu sunah Rasul, lalu ijtihad. Nabi pun membenarkannya (HR Abu Daud dan Tirmizi). Dialog ini menjadi dasar urutan sumber hukum Islam.</p></div>`,
+taklif:()=>`<div class="card"><h2>Lima Hukum Taklifi</h2><p>Tekan kartu untuk melihat contoh.</p><div class="grid">${TK.map(x=>`<div class="flip" onclick="this.innerHTML='<b>${x[0]}</b><br>Contoh: ${x[2]}'"><b>${x[0]}</b><br>${x[1]}</div>`).join("")}</div></div>`,
+kk:()=>`<div class="card"><h2>Al-Kulliyat al-Khamsah (Lima Prinsip Dasar Syariat)</h2><p>Tujuan hukum Islam (<i>maqasid asy-syariah</i>) adalah menjaga lima hal berikut. Tekan kartu untuk melihat penerapannya.</p><div class="grid">${KK.map(x=>`<div class="flip" onclick="this.innerHTML='<b>${x[0]}</b><br>${x[2]}'"><b>${x[0]}</b><br>${x[1]}</div>`).join("")}</div></div>`,
+kuis:()=>{window.qi=0;window.sc=0;return `<div class="card"><h2>Kuis Interaktif</h2><div class="bar"><i id="pb"></i></div><div id="qb"></div></div>`}
+};
+function src(k){const s=S[k];return `<div class="card"><h2>${s.ic} ${s.t}</h2><h3>Definisi</h3><p>${s.def}</p><h3>Kedudukan</h3><p>${s.pos}</p><h3>Pokok-pokok materi</h3><ul>${s.isi.map(i=>`<li>${i}</li>`).join("")}</ul></div>
+<div class="card"><h3>Contoh pengambilan hukum (istinbat)</h3>${s.ar?`<div class="ar">${s.ar}</div><div class="sub">${s.ref}</div>`:""}<ol>${s.ex.map(i=>`<li>${i}</li>`).join("")}</ol><details><summary>Penerapan dalam kehidupan sehari-hari</summary><p>${s.ap}</p></details></div>`}
+function showQ(){const b=document.getElementById("qb");if(!b)return;document.getElementById("pb").style.width=(qi/Q.length*100)+"%";
+if(qi>=Q.length){const p=Math.round(sc/Q.length*100);b.innerHTML=`<h3>Skor: ${sc}/${Q.length} (${p})</h3><p>${p>=75?"Mantap! Pemahamanmu sudah baik.":"Ayo ulangi materi lalu coba lagi."}</p><button class="btn" onclick="go('kuis')">Ulangi</button>`;return}
+const q=Q[qi];b.innerHTML=`<p><b>${qi+1}. ${q[0]}</b></p>${q[1].map((o,i)=>`<button class="opt" onclick="ans(${i},this)">${o}</button>`).join("")}<div class="fb" id="fb"></div>`}
+function ans(i,el){const q=Q[qi],bs=[...el.parentNode.querySelectorAll(".opt")];if(bs.some(x=>x.disabled))return;bs.forEach(x=>x.disabled=true);bs[q[2]].classList.add("ok");if(i==q[2])sc++;else el.classList.add("no");
+document.getElementById("fb").innerHTML=(i==q[2]?"✅ Benar. ":"❌ Belum tepat. ")+q[3]+`<br><button class="btn" onclick="qi++;showQ()">Lanjut</button>`}
+const _go=go;go=function(k){_go(k);if(k=="kuis")showQ()};
+const h=(location.hash||"").slice(1);go(tabs.some(t=>t[0]==h)?h:"home");
+</script>
+</body>
+</html>
